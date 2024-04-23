@@ -2,7 +2,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const fileName = './README.md'
-const generateMarkdown = require('./generateMarkdown')
+const generateMarkdown = require('./generateMarkdown');
+// const { type } = require('os');
 // TODO: Create an array of questions for user input
 const questions = [
    
@@ -43,10 +44,19 @@ const questions = [
             message:'Which license did you use?',
             choices: ['MIT','GNU','CC','No License'],
         },
-    
-    
+        {
+            type: 'input',
+            name: 'username',
+            message: 'What is your Github username?',
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is your email address?',
+        }
+        
 ];
-console.log("why isn't this working?")
+
 // TODO: Create a function to write README filenod
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, err =>

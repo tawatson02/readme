@@ -1141,7 +1141,7 @@ Public License instead of this License.`;
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  
+  ${renderLicenseBadge(data.license)}
   ## Description
   ${data.description}
 
@@ -1161,9 +1161,14 @@ function generateMarkdown(data) {
   ${data.contribute}
 
   ## License
-  ${renderLicenseBadge(data.license)}
+  
   ${renderLicenseLink(data.license)}
   ${renderLicenseSection(data.license)}
+
+  ## Questions
+  This is how I can be contacted for further questions.
+  Github :https://github.com/${data.username}
+  Email: ${data.email}
 `;
 }
 
